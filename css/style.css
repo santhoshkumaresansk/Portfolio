@@ -9682,3 +9682,30 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+    /* Force body to scroll */
+html, body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: auto;
+  min-height: 100vh;
+  scroll-behavior: auto; /* Disable smooth scrolling for testing */
+}
+
+/* Ensure no hidden overflow is blocking content */
+* {
+  touch-action: auto !important;
+}
+
+/* Fix full-height sections */
+.js-fullheight {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .js-fullheight {
+    height: auto;
+  }
+}
